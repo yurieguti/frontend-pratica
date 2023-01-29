@@ -1,0 +1,27 @@
+.listaTarefas {
+  grid-area: tarefas;
+  height: 100%;
+}
+
+.listaTarefas h2 {
+  background-color: red;
+}
+
+.listaTarefas ul {
+  max-height: 350px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+@media screen and (min-width: 1280px) {
+  .listaTarefas h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 24px;
+  }
+
+  .listaTarefas ul {
+    overflow: auto;
+    max-height: 500px;
+  }
+}

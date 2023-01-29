@@ -1,0 +1,55 @@
+@import url("../../../index.css");
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--menu-lateral);
+  width: 75vw;
+  height: 100vh;
+}
+
+.sidebar__link {
+  height: 64px;
+  padding-left: 64px;
+  color: var(--fonte-alternativa);
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__link::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  position: absolute;
+  left: 24px;
+}
+
+.sidebar__link_inicio::before {
+  content: "\e902";
+}
+
+.sidebar__link_videos::before {
+  content: "\e90e";
+}
+
+.sidebar__link_picos::before {
+  content: "\e909";
+}
+
+.sidebar__link_integrantes {
+  content: "\e90e";
+}
+
+.sidebar__link_pinturas {
+  content: "\e90e";
+}
+
+.sidebar__link_camisas {
+  content: "\e90e";
+}
+
+.sidebar__link:hover {
+  height: 64px;
+  color: var(--fonte-alternativa);
+}

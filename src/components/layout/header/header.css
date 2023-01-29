@@ -1,0 +1,30 @@
+@import url("../../../index.css");
+
+.header {
+  gap: 2rem;
+  background-color: var(--main-color);
+  color: white !important;
+  padding: 8px 16px;
+  box-shadow: var(--sombras);
+  font-size: 24px;
+}
+
+.header .logo {
+  width: 100px;
+}
+
+.nav-link {
+  color: #ffff !important;
+}
+
+.header__menu i::before {
+  content: "\e904";
+}
+
+.header__logo {
+  width: 40px;
+}
+
+.header__notificacao i::before {
+  content: "\e906";
+}

@@ -1,0 +1,21 @@
+.inicio {
+  display: flex;
+  flex-flow: row;
+  padding: 4rem;
+  justify-content: center;
+  align-items: center;
+
+  flex-grow: 2;
+}
+
+.inicio .card-bank {
+  background-color: var(--main-color);
+  display: flex;
+  flex-flow: row;
+  height: 40rem;
+  width: 40vw;
+  border-radius: 4rem;
+
+  margin-right: auto;
+  justify-self: flex-start;
+}

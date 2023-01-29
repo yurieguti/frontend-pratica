@@ -1,0 +1,40 @@
+:root {
+	--main-color: #ff5c00;
+	--main-color-backgound: #0f1819;
+}
+
+.App {
+	text-align: center;
+}
+
+.app-container {
+	display: grid;
+	height: 100vh;
+	grid-template-rows: 90px 1fr 60px;
+	grid-template-areas:
+		"header"
+		"page-content"
+		"footer";
+}
+
+.header {
+	grid-area: header;
+}
+
+.page-content {
+	background-color: var(--main-color-backgound);
+	display: flex;
+	flex-flow: column;
+	max-height: 100%;
+	grid-area: page-content;
+
+	overflow-y: scroll;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.spinner {
+	margin: auto;
+}

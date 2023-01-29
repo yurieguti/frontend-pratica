@@ -1,0 +1,31 @@
+.bancos {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	padding: 2rem;
+	gap: 2rem;
+	color: #fff;
+
+	max-height: 100%;
+	width: 100vw;
+}
+
+.bancos .container-table {
+	flex: 1;
+	max-height: 55vh;
+	overflow-y: scroll;
+}
+
+.bancos .container-bancos {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+}
+
+.bancos .row-button {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+}
