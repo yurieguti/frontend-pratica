@@ -162,6 +162,10 @@ const VisualizarConta = ({
 		);
 	};
 
+	const onClickTransferirConta = () => {
+		navigate("/transferir-conta", { state: location.state });
+	};
+
 	return (
 		<div className="visualizar-conta">
 			<Card className="bg-dark text-white">
@@ -245,7 +249,10 @@ const VisualizarConta = ({
 									src="transferencia.png"
 								/>
 								<Card.Body>
-									<Button variant="primary">
+									<Button
+										onClick={() => onClickTransferirConta()}
+										variant="primary"
+									>
 										Transferência
 									</Button>
 								</Card.Body>

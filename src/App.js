@@ -14,6 +14,7 @@ import CriarBancos from "./components/pages/bancos/criar-bancos/criar-bancos";
 import ConfirmationMessage from "./components/layout/confirmation-message/confirmation-message";
 import ListarContas from "./components/pages/contas/listar-contas/listar-contas";
 import VisualizarConta from "./components/pages/contas/visualizar-contas/visualizar-contas";
+import TransferenciaContas from "./components/pages/contas/transferencia/transferencia";
 
 function App() {
 	const [messageToShow, setMessageToShow] = useState({
@@ -168,6 +169,21 @@ function App() {
 								path="/visualizar-conta"
 								element={
 									<VisualizarConta
+										showSimpleMessage={showSimpleMessage}
+										showConfirmationModal={
+											showConfirmationModal
+										}
+										closeConfirmationModal={
+											closeConfirmationModal
+										}
+									/>
+								}
+							></Route>
+
+							<Route
+								path="/transferir-conta"
+								element={
+									<TransferenciaContas
 										showSimpleMessage={showSimpleMessage}
 										showConfirmationModal={
 											showConfirmationModal

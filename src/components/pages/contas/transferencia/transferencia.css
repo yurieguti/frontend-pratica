@@ -1,0 +1,53 @@
+.transferencia {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	padding: 4rem;
+	gap: 4rem;
+	color: #fff;
+
+	max-height: 100%;
+	width: 100vw;
+}
+
+.transferencia .container-table {
+	flex: 1;
+}
+
+.transferencia .row-card {
+	display: flex;
+	justify-content: space-between;
+}
+
+.transferencia .card-data {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.transferencia .spinner {
+	margin: auto;
+	padding: 2rem;
+}
+
+.transferencia .container-bancos {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+}
+
+.transferencia .row-button-search {
+	display: flex;
+	gap: 5px;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.transferencia .row-button {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+}

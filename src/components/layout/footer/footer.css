@@ -1,4 +1,7 @@
 .footer {
-  display: flex;
-  background-color: var(--main-color);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background-color: var(--main-color);
+	color: white;
 }
