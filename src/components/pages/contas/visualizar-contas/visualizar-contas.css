@@ -1,0 +1,63 @@
+.visualizar-conta {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	padding: 4rem;
+	gap: 4rem;
+	color: #fff;
+
+	max-height: 100%;
+	width: 100vw;
+}
+
+.visualizar-conta .bg-card-operacoes {
+	background-color: #323539;
+}
+
+.visualizar-conta .container-table {
+	flex: 1;
+}
+
+.visualizar-conta .row-card {
+	display: flex;
+	justify-content: space-between;
+}
+
+.visualizar-conta .card-operacoes-container {
+	display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.visualizar-conta .card-data {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.visualizar-conta .spinner {
+	margin: auto;
+	padding: 2rem;
+}
+
+.visualizar-conta .container-conta {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
+}
+
+.visualizar-conta .row-button-search {
+	display: flex;
+	gap: 5px;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.visualizar-conta .row-button {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+}

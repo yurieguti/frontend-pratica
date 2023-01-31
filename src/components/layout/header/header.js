@@ -18,7 +18,7 @@ let Header = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="item" href="/contas">
+        <Nav.Link className="item" href="/listar-contas">
           Contas
         </Nav.Link>
       </Nav.Item>

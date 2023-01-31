@@ -1,49 +1,51 @@
-.bancos {
+.visualizar-banco {
 	display: flex;
 	flex-flow: column;
 	flex: 1;
 
-	padding: 2rem;
-	gap: 2rem;
+	padding: 4rem;
+	gap: 4rem;
 	color: #fff;
 
 	max-height: 100%;
 	width: 100vw;
 }
 
-.bancos .container-table {
+.visualizar-banco .container-table {
 	flex: 1;
 }
 
-.bancos .row-card {
+.visualizar-banco .row-card {
 	display: flex;
-	padding: 2rem;
 	justify-content: space-between;
 }
 
-.bancos .card-data {
+.visualizar-banco .card-data {
+	display: flex;
+	flex-flow: column;
+	gap: 2rem;
 	padding: 2rem;
 }
 
-.bancos .spinner {
+.visualizar-banco .spinner {
 	margin: auto;
 	padding: 2rem;
 }
 
-.bancos .container-bancos {
+.visualizar-banco .container-bancos {
 	display: flex;
 	flex-flow: column;
 	gap: 2rem;
 }
 
-.bancos .row-button-search {
+.visualizar-banco .row-button-search {
 	display: flex;
 	gap: 5px;
 	align-items: flex-end;
 	justify-content: flex-end;
 }
 
-.bancos .row-button {
+.visualizar-banco .row-button {
 	display: flex;
 	gap: 5px;
 	align-items: center;

@@ -1,18 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import { Button, Col, Form, Row, Spinner, Table } from "react-bootstrap";
+import { Navigate, useNavigate } from "react-router-dom";
+import { Button, Card, Col, Form, Row, Spinner, Table } from "react-bootstrap";
 
 import "./listar-bancos.css";
-import SimpleMessage from "../../../layout/simple-message/simple-message";
 
-const ListarBancos = () => {
+const ListarBancos = ({ showSimpleMessage }) => {
 	const [bancos, setData] = useState([]);
+	const navigate = useNavigate();
 	const urlBancos =
-		"http://localhost:8000/bancos/leitura.php";
+		"http://localhost:8000/Projetophpva2-master/bancos/leitura.php";
 
 	const urlPesquisaBancos =
-		"http://localhost:8000/bancos/pesquisar.php";
+		"http://localhost:8000/Projetophpva2-master/bancos/pesquisar.php";
 
 	const [filtrosBanco, setFiltrosBanco] = useState({
 		nome: "",
@@ -22,12 +22,6 @@ const ListarBancos = () => {
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
-	const [messageToShow, setMessageToShow] = useState({
-		title: "",
-		description: "",
-		variant: "",
-		show: false,
-	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -86,23 +80,11 @@ const ListarBancos = () => {
 			});
 	};
 
-	const showSimpleMessage = (title, description, variant) => {
-		setMessageToShow({
-			title: title,
-			description: description,
-			variant: variant,
-			show: true,
-		});
+	const showSimpleFeedbackMessage = (title, description, variant) => {
+		showSimpleMessage(title, description, variant);
 	};
 
-	const closeSimpleMessage = () => {
-		setMessageToShow({
-			title: "",
-			description: "",
-			variant: "",
-			show: false,
-		});
-	};
+	const closeSimpleFeedbackMessage = () => {};
 
 	const handleFormChange = (event) => {
 		let { name, value } = event.target;
@@ -125,22 +107,20 @@ const ListarBancos = () => {
 		});
 	};
 
-	const criarConta = (selectedBanco) => {
-		Navigate("/criarConta", { state: selectedBanco });
+	const CriarConta = (selectedBanco) => {
+		navigate("/criar-conta", { state: selectedBanco });
+	};
+
+	const VisualizarBanco = (selectedBanco) => {
+		navigate("/visualizar-banco", { state: selectedBanco });
 	};
 
 	return (
 		<div className="bancos">
-			<SimpleMessage
-				className="spinner"
-				messageToShow={messageToShow}
-				onCloseClick={closeSimpleMessage}
-			></SimpleMessage>
 			<h1>Bancos</h1>
-			{isLoading ? (
-				<Spinner animation="border" variant="warning" />
-			) : (
-				<div className="container-bancos">
+
+			<Card className="bg-dark text-white card-data">
+				<Card.Body>
 					<Form>
 						<Row>
 							<Col>
@@ -157,45 +137,86 @@ const ListarBancos = () => {
 									onChange={handleFormChange}
 								/>
 							</Col>
-							<Col className="row-button" onClick={onSearchClick}>
+							<Col
+								className="row-button-search"
+								onClick={onSearchClick}
+							>
 								<Button>Pesquisar banco</Button>
 							</Col>
 						</Row>
 					</Form>
-					<div className="container-table">
-						--
-						<Table striped bordered hover variant="dark">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Nome</th>
-									<th>Endereco</th>
-									<th>Agencia</th>
-									<th>Bandeira</th>
-									<th>Ações</th>
-								</tr>
-							</thead>
-							<tbody>
-								{bancos.map((banco) => (
-									<tr key={banco.id}>
-										<td>{banco.id}</td>
-										<td>{banco.nome}</td>
-										<td>{banco.endereco}</td>
-										<td>{banco.agencia}</td>
-										<td>{banco.bandeira}</td>
-										<td className="row-button">
-											<Button>Criar conta</Button>
-											<Button variant="danger">
-												Apagar banco
-											</Button>
-										</td>
-									</tr>
-								))}
-							</tbody>
-						</Table>
-					</div>
+				</Card.Body>
+			</Card>
+			<div className="container-bancos">
+				<div className="container-table">
+					<Card className="bg-dark text-white card-data">
+						{isLoading ? (
+							<Spinner
+								animation="border"
+								className="spinner"
+								variant="warning"
+							/>
+						) : (
+							<Card.Body>
+								<div className="row-card">
+									<Card.Title>Lista de bancos</Card.Title>
+									<Button
+										variant="secondary"
+										size="lg"
+										active
+										onClick={() =>
+											navigate("/criar-bancos")
+										}
+									>
+										Criar banco
+									</Button>
+								</div>
+								<Table striped bordered hover variant="dark">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Nome</th>
+											<th>Endereco</th>
+											<th>Agencia</th>
+											<th>Bandeira</th>
+											<th>Ações</th>
+										</tr>
+									</thead>
+									<tbody>
+										{bancos.map((banco) => (
+											<tr key={banco.id}>
+												<td>{banco.id}</td>
+												<td>{banco.nome}</td>
+												<td>{banco.endereco}</td>
+												<td>{banco.agencia}</td>
+												<td>{banco.bandeira}</td>
+												<td className="row-button">
+													<Button
+														onClick={() =>
+															CriarConta(banco)
+														}
+													>
+														Criar conta
+													</Button>
+													<Button
+														onClick={() =>
+															VisualizarBanco(
+																banco
+															)
+														}
+													>
+														Visualizar banco
+													</Button>
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</Table>
+							</Card.Body>
+						)}
+					</Card>
 				</div>
-			)}
+			</div>
 		</div>
 	);
 };

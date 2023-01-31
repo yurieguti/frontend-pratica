@@ -1,4 +1,4 @@
-.bancos {
+.contas {
 	display: flex;
 	flex-flow: column;
 	flex: 1;
@@ -11,39 +11,39 @@
 	width: 100vw;
 }
 
-.bancos .container-table {
+.contas .container-table {
 	flex: 1;
 }
 
-.bancos .row-card {
+.contas .row-card {
 	display: flex;
 	padding: 2rem;
 	justify-content: space-between;
 }
 
-.bancos .card-data {
+.contas .card-data {
 	padding: 2rem;
 }
 
-.bancos .spinner {
+.contas .spinner {
 	margin: auto;
 	padding: 2rem;
 }
 
-.bancos .container-bancos {
+.contas .container-bancos {
 	display: flex;
 	flex-flow: column;
 	gap: 2rem;
 }
 
-.bancos .row-button-search {
+.contas .row-button-search {
 	display: flex;
 	gap: 5px;
 	align-items: flex-end;
 	justify-content: flex-end;
 }
 
-.bancos .row-button {
+.contas .row-button {
 	display: flex;
 	gap: 5px;
 	align-items: center;
